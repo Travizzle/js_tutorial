@@ -18,7 +18,7 @@ But bears it out even to the edge of doom.
 // Unique words
 let uniques = {};
 // All words in the text
-// let words = sonnet.match(/[\w']+/g);
+let words = sonnet.match(/[\w']+/g);
 
 // Iterate through 'words' and build up an associative array of unique words.
 for (let i = 0; i < words.length; i++) {
@@ -60,3 +60,29 @@ for (let i = 0; i < words.length; i++) {
 
 console.log(mapUniques);
 
+/*
+The program is for extracting all unique words in a string and counting each
+instance of the word.
+
+Plain Object version:
+The initial condition of the for loop sets a counter to increment up a word
+until it hits the end of the string. A word is determined by the regex in
+the String#match method in variable 'words'. Within the loop a variable is
+set for an individual word within the array created from the match method in
+'words'. If the word exists, then the condition of the 'if' statement
+is true. If the word already exists, which is to say if the condition is
+true, then the count for that word increases by 1. If the condition is false
+then the word is put in the 'uniques' object. Afterward the content of the
+'uniques' object is printed to the screen.
+
+Map Object version:
+The same initial counter is set for the loop, to increment up by a word
+until the end of the string. A variable is set to an individual word which
+is determined by the regex in 'words'. Another variable (currentValue) is
+set to retrieve a word using the Object#get method. This method returns a
+boolean true or false. Now that boolean result is used as a conditional for
+the 'if' loop. If the condition is true then the word count is incremented
+up by 1 using the Object#set method. If the conditional is false, the loop
+uses the Object#set method to set the count to 1. After the looop executes
+then the result of the Map object is printed to the screen.
+*/
